@@ -1,3 +1,25 @@
+// export async function getServerSideProps() {
+// export const getStaticProps = async () => {
+//   const res = await fetch(
+//     `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=4`,
+//     {
+//       method: "get",
+//       headers: {
+//         Accept: "application/json, text/plain, */*",
+//         "X-CMC_PRO_API_KEY": "04720ebd-e29a-452a-86db-d5aea8f42b4f",
+//         // "X-CMC_PRO_API_KEY": process.env.API_PRIVATE_KEY,
+//         "Content-type": "application/json",
+//       },
+//     }
+//   );
+//   const data = await res.json();
+//   console.log(data);
+//   return {
+//     // props: { cryptos: data },
+//     props: { data },
+//   };
+// };
+
 const CryptoTable = () => {
   return (
     <table className="items-center w-full bg-transparent border-collapse">
@@ -9,6 +31,14 @@ const CryptoTable = () => {
             }
           >
             Project
+            {/* {cryptos && cryptos.map(crypto => (
+              <div key={crypto.id}>
+                <a>
+                  <h3>{crypto.symbol}</h3>
+                </a>
+              </div>
+            ))} */}
+
           </th>
           <th
             className={
