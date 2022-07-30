@@ -1,11 +1,20 @@
 // import Layout from "../components/Layout";
-import "../styles/globals.css";
+import { useEffect } from "react"
+import SSRProvider from 'react-bootstrap/SSRProvider';
+import 'bootstrap/dist/css/bootstrap.css'
+import "../styles/globals.css"
+
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap");
+  }, []);
   return (
     <div className="">
       {/* <Layout> */}
-      <Component {...pageProps} />
+      <SSRProvider>
+        <Component {...pageProps} />
+      </SSRProvider>
       {/* </Layout> */}
     </div>
   );
